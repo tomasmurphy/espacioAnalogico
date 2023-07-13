@@ -1,0 +1,2 @@
+# espacioAnalogico
+espacio
