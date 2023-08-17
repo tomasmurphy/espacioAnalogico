@@ -1,0 +1,71 @@
+.bannerPromo {
+  height: auto;
+  width: 100%;
+  margin-top: 2rem;
+  .row {
+    align-items: center;
+    text-align: center;
+  }
+  p,
+  i {
+    text-decoration: none;
+    color: grey;
+  }
+  i {
+    font-size: 4rem;
+  }
+  .pModal {
+    display: inline;
+    cursor: pointer;
+  }
+}
+.botonera {
+  display: flex;
+  justify-content: center;
+}
+.sinBorde {
+  --bs-gutter-x: 0rem;
+  margin-top: 9rem;
+}
+ 
+.home {
+  background-image: url('../../../public/blanco.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: scroll;
+  height: calc(100vh - 9rem);
+
+  .btnEspacio {
+    position: absolute;
+    top: 15rem;
+    left: 5rem;
+    margin: 2rem;
+    margin-right: 1rem;
+    background-color: rgba(255, 255, 255, .6);
+    color: negro;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    font-size:1rem;
+    border-radius: 2rem;
+    font-weight: 500;
+    cursor: pointer;
+  box-shadow: 2px 2px 4px #888888;
+  transition-duration: 0.4s;
+  &:hover{
+    opacity: .7;
+    box-shadow: 4px 4px 8px #888888; 
+  };
+    @include desktop {
+      // padding-top: 1rem;
+      // padding-bottom: 1rem;
+      // // top: 30%;
+      // // left: 3rem;
+    }
+  }
+
+
+
+}
