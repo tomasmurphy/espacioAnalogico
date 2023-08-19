@@ -91,10 +91,9 @@ export const CartProvider = ({ children }) => {
       setItems(productos);
       setIsLoading(false);
     };
-  
+
     loadProducts();
   }, []);
-  
 
   return (
     <CartContext.Provider
@@ -107,13 +106,13 @@ export const CartProvider = ({ children }) => {
         totalPrecio,
         cantidadSeleccionada,
         handleModal,
-        items
+        items,
       }}
     >
       {isLoading ? (
         <div className="loader-container">
           <div className="loader">
-            <h3 className='text-center mt-5'>Cargando el catálogo</h3>
+            {/* <h3 className="text-center mt-5"></h3> */}
             <Loader />
           </div>
         </div>
@@ -123,4 +122,3 @@ export const CartProvider = ({ children }) => {
     </CartContext.Provider>
   );
 };
-

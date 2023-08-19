@@ -6,7 +6,7 @@ const Loader = () => {
         <div className="contenido">
             <div className="spinner">
             </div>
-            <i className="fs-1 bi bi-sunglasses" />
+            <i className="fs-1 bi bi-camera" />
         </div>
     );
 };

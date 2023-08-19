@@ -23,6 +23,7 @@ const Talleres = () => {
             />
             <div className='item row'>
                 <ItemList items={productosCategoria} />
+                <h1>EN CONSTRUCCION</h1>
             </div>
         </>
     );

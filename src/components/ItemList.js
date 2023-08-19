@@ -13,7 +13,7 @@ export const ItemList = ({ items }) => {
                   id={item.id}
                   imagenes={item.imagenes}
                   titulo={item.titulo}
-                  medidas={item.medidas}
+                  precio={item.precio}
                   />
                   </div>
             )

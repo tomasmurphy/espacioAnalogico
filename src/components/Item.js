@@ -7,7 +7,7 @@ export const Item = (
     id = "",
     titulo = '',
     imagenes = '',
-    medidas = "",
+    precio = "",
     
   }
 
@@ -22,9 +22,11 @@ export const Item = (
 
         <div className="imgMedida">
           <img src={imagenes[0].url} alt={`Foto de ${titulo}`} className='img-fluid mx-0 px-0' />
+          <h4 className='text-center negrita mt-2'>{titulo}</h4>
+        <p className='text-center negrita'><span className='negrita me-2'>${precio.toLocaleString()} </span>
 
-          <div className="medida">medidas:{medidas.ancho}/{medidas.alto}/{medidas.patilla}</div>
-          {/* <div class="medida"><Anteojo medidas={medidas}></Anteojo></div> */}
+          </p>
+
         </div>
 
       </Link>

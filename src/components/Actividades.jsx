@@ -14,7 +14,9 @@ const Actividades = () => {
         description={"Avtividades del espacio"}
         pathSlug={window.location.href}
       />
-      <div className="item row">HOLA</div>
+      <div className="item row">
+        <h1>EN CONSTRUCCION</h1>
+       </div>
     </>
   );
 };

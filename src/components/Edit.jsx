@@ -4,11 +4,12 @@ import { dataBase } from "../firebaseConfig";
 import Modal from "react-bootstrap/Modal";
 import ImagenUpload from "./ImageUpload";
 import SelectCategoria from "./SelectCategoria";
+import { Editor } from "./MostrarImagen";
 
 const Edit = ({ id  }) => {
   const [categoria, setCategoria] = useState("");
   const [titulo, setTitulo] = useState("");
-  const [proveedor, setProveedor] = useState("");
+  const [precio, setprecio] = useState(0);
   const [medidas, setMedidas] = useState({ ancho: "", alto: "", patilla: "" });
   const [imagenes, setImagenes] = useState([]);
   const [descripcion, setDescripcion] = useState("");
@@ -30,7 +31,7 @@ const Edit = ({ id  }) => {
       categoria: categoria,
       titulo: titulo,
       descripcion: descripcion,
-      proveedor: proveedor,
+      precio: precio,
       medidas: medidas,
       imagenes: imagenes,
       stock: stock,
@@ -48,7 +49,7 @@ const Edit = ({ id  }) => {
       setTitulo(product.data().titulo);
       setDescripcion(product.data().descripcion);
       setImagenes(product.data().imagenes);
-      setProveedor(product.data().proveedor);
+      setprecio(product.data().precio);
       setMedidas(product.data().medidas);
       setStock(product.data().stock);
     } else {
@@ -71,6 +72,10 @@ const Edit = ({ id  }) => {
     setCategoria(value);
     cargarCategoria(value);
   };
+  const handleDescripcionChange = (value) => {
+    setDescripcion(value);
+  };
+
   return (
     <>
       <div className="" onClick={handleShow}>
@@ -149,21 +154,19 @@ const Edit = ({ id  }) => {
                       className="form-control"
                     />
                   </div>
-                  <div className="mb-3 col-12 d-flex">
-                    <label className="form-label col-4">Descripcion</label>
-                    <input
-                      value={descripcion}
-                      onChange={(e) => setDescripcion(e.target.value)}
-                      type="text"
-                      className="form-control"
-                    />
+              <div className="mb-3 col-12">
+                    <label className="form-label">Descripcion</label>
+                    <Editor
+                      descripcion={descripcion}
+                      cargarDescripcion={handleDescripcionChange}
+                    ></Editor>
                   </div>
-                  <div className="mb-3 col-12 d-flex">
-                    <label className="form-label col-4">Proveedor</label>
+                      <div className="mb-3 col-12 d-flex">
+                    <label className="form-label col-4">precio</label>
                     <input
-                      value={proveedor}
-                      onChange={(e) => setProveedor(e.target.value)}
-                      type="text"
+                      value={precio}
+                      onChange={(e) => setprecio(e.target.value)}
+                      type="number"
                       className="form-control"
                     />
                   </div>

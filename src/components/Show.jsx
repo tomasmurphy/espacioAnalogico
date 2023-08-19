@@ -18,6 +18,7 @@ import Login from "./Login";
 import Categorias from "./Categorias";
 import Inicio from "./Inicio";
 import Test from "./ExportExcel";
+
 const Show = () => {
   const [products, setProducts] = useState([]);
   const [pausedProducts, setPausedProducts] = useState([]);
@@ -25,7 +26,7 @@ const Show = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [showPaused, setShowPaused] = useState(false);
   const [pausedLoaded, setPausedLoaded] = useState(false);
-  
+
   const handleSearchChange = (event) => {
     setSearchTerm(event.target.value);
   };
@@ -35,52 +36,57 @@ const Show = () => {
       collection(dataBase, "items"),
       where("estado", "==", "activo")
     );
-  
+
     const pausedProductsCollection = query(
       collection(dataBase, "items"),
       where("estado", "==", "pausado")
     );
-  
-    const unsubscribeActive = onSnapshot(activeProductsCollection, (snapshot) => {
-      const activeProductos = snapshot.docs.map((doc) => {
-        console.log("leo desde admin");
-        return {
-          ...doc.data(),
-          id: doc.id,
-        };
-      });
-      const activeProductosOrdenados = activeProductos.sort((a, b) => {
-        if (a.categoria === b.categoria) {
-          return a.titulo.localeCompare(b.titulo);
-        }
-        return a.categoria.localeCompare(b.categoria);
-      });
-      setProducts(activeProductosOrdenados);
-    });
-  
-    const unsubscribePaused = onSnapshot(pausedProductsCollection, (snapshot) => {
-      const pausedProductos = snapshot.docs.map((doc) => {
-        console.log("leo desde admin");
-        return {
-          ...doc.data(),
-          id: doc.id,
-        };
-      });
-      const pausedProductosOrdenados = pausedProductos.sort((a, b) => {
-        if (a.categoria === b.categoria) {
-          return a.titulo.localeCompare(b.titulo);
-        }
-        return a.categoria.localeCompare(b.categoria);
-      });
-      setPausedProducts(pausedProductosOrdenados);
-    });
-  
+
+    const unsubscribeActive = onSnapshot(
+      activeProductsCollection,
+      (snapshot) => {
+        const activeProductos = snapshot.docs.map((doc) => {
+          console.log("leo desde admin");
+          return {
+            ...doc.data(),
+            id: doc.id,
+          };
+        });
+        const activeProductosOrdenados = activeProductos.sort((a, b) => {
+          if (a.categoria === b.categoria) {
+            return a.titulo.localeCompare(b.titulo);
+          }
+          return a.categoria.localeCompare(b.categoria);
+        });
+        setProducts(activeProductosOrdenados);
+      }
+    );
+
+    const unsubscribePaused = onSnapshot(
+      pausedProductsCollection,
+      (snapshot) => {
+        const pausedProductos = snapshot.docs.map((doc) => {
+          console.log("leo desde admin");
+          return {
+            ...doc.data(),
+            id: doc.id,
+          };
+        });
+        const pausedProductosOrdenados = pausedProductos.sort((a, b) => {
+          if (a.categoria === b.categoria) {
+            return a.titulo.localeCompare(b.titulo);
+          }
+          return a.categoria.localeCompare(b.categoria);
+        });
+        setPausedProducts(pausedProductosOrdenados);
+      }
+    );
+
     return () => {
       unsubscribeActive();
       unsubscribePaused();
     };
   }, []);
-  
 
   useEffect(() => {
     if (!pausedLoaded && showPaused) {
@@ -115,13 +121,13 @@ const Show = () => {
     const productosFiltrados = productos.filter((producto) => {
       const titulo = producto.titulo.toLowerCase();
       const descripcion = producto.descripcion.toLowerCase();
-      const proveedor = producto.proveedor.toLowerCase();
+      const precio = producto.precio;
       const categoria = producto.categoria.toLowerCase();
       const searchTermLower = searchTerm.toLowerCase();
       return (
         titulo.includes(searchTermLower) ||
         descripcion.includes(searchTermLower) ||
-        proveedor.includes(searchTermLower) ||
+        precio.includes(searchTermLower) ||
         categoria.includes(searchTermLower)
       );
     });
@@ -191,7 +197,10 @@ const Show = () => {
                 <Test></Test>
               </div>
               <div className="row gap-1 mb-2">
-                <div className="boton col-6 col-md-2 text-center" onClick={togglePaused}>
+                <div
+                  className="boton col-6 col-md-2 text-center"
+                  onClick={togglePaused}
+                >
                   {showPaused ? "Mostrar activos" : "Mostrar pausados"}
                 </div>
                 <input
@@ -202,13 +211,17 @@ const Show = () => {
                   onChange={handleSearchChange}
                 />
               </div>
-              <div className="row cuadro " style={{ fontWeight: "bold" }} key="titles">
+              <div
+                className="row cuadro "
+                style={{ fontWeight: "bold" }}
+                key="titles"
+              >
                 <div className="d-none d-md-flex col-md-2 mx-0 px0">
                   Categoría
                 </div>
                 <div className="col-6 col-md-2 mx-0 px0">Título</div>
                 <div className="d-none d-md-flex col-md-2 mx-0 px0">
-                  Proveedor
+                  precio
                 </div>
                 <div className="d-none d-md-flex col-md-3 mx-0 px0">
                   Descripción
@@ -230,7 +243,7 @@ const Show = () => {
                     {product.titulo}
                   </div>
                   <div className="d-none d-md-flex col-2  mx-0 px0">
-                    {product.proveedor}
+                    {product.precio}
                   </div>
                   <div
                     className="d-none d-md-flex col-3 descripcion"

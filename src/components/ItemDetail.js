@@ -63,12 +63,9 @@ export const ItemDetail = ({ itemDetail, onHandleCartModal }) => {
             <div className='' dangerouslySetInnerHTML={{ __html: itemDetail.descripcion }} />
           
           </div>
-          <div className='mt-3 mb-3'>
-          <Anteojo medidas={itemDetail.medidas}></Anteojo> 
-          </div>       
           <div className='mt-3'>   
           
-          <h4 ><i className="bi bi-credit-card-2-back me-2"></i>Todos los medios de pago </h4>
+          <h4 ><i className="bi bi-bank me-2"></i>Transferencia / Mercado Pago </h4>
 
             <h4><i className="bi bi-truck me-2"></i>Envíos a todo el país!</h4>
             <h4><i className="bi bi-person-check me-2"></i>Asesoramiento personalizado</h4>
