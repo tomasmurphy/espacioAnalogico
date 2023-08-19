@@ -1,31 +1,22 @@
-import React, { useContext } from 'react';
-import { useParams } from 'react-router-dom';
-import { ItemList } from './ItemList';
-import Seo from './Head';
-import { CartContext } from '../context/CartContext';
+import React, { useContext } from "react";
+import { useParams } from "react-router-dom";
+import { ItemList } from "./ItemList";
+import Seo from "./Head";
+import { CartContext } from "../context/CartContext";
 
 const Actividades = () => {
-    window.scrollTo(0, 0)
-    const { nombreCategoria } = useParams()
-    const cartContext = useContext(CartContext);
-    const {items} = cartContext
+  window.scrollTo(0, 0);
 
-    const productosCategoria = nombreCategoria !== "todos" ?
-        items.filter((p) => p.categoria === nombreCategoria) :
-        items;
-
-    return (
-        <>
-            <Seo
-                title={"Tienda"}
-                description={"Rollos, quimicos, revelado"}
-                pathSlug={window.location.href}
-            />
-            <div className='item row'>
-                <ItemList items={productosCategoria} />
-            </div>
-        </>
-    );
+  return (
+    <>
+      <Seo
+        title={"Actividades"}
+        description={"Avtividades del espacio"}
+        pathSlug={window.location.href}
+      />
+      <div className="item row">HOLA</div>
+    </>
+  );
 };
 
 export default Actividades;
