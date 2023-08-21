@@ -6,7 +6,7 @@ import ImagenUpload from "./ImageUpload";
 import SelectCategoria from "./SelectCategoria";
 import { Editor } from "./MostrarImagen";
 
-const Edit = ({ id  }) => {
+const Edit = ({ id }) => {
   const [categoria, setCategoria] = useState("");
   const [titulo, setTitulo] = useState("");
   const [precio, setprecio] = useState(0);
@@ -35,10 +35,9 @@ const Edit = ({ id  }) => {
       medidas: medidas,
       imagenes: imagenes,
       stock: stock,
-      estado: imagenes.length === 0 || stock === 0 ? "pausado" : "activo"
+      estado: imagenes.length === 0 || stock === 0 ? "pausado" : "activo",
     };
     await updateDoc(product, data);
-    
   };
 
   const getProductById = async (id) => {
@@ -123,7 +122,7 @@ const Edit = ({ id  }) => {
                       ></ImagenUpload>
                     )}
                   </div>
-                  {/* <div className="col-4 text-center ">
+                  <div className="col-4 text-center ">
                     {imagenes[2] === undefined ? (
                       <ImagenUpload
                         updateFile={{ name: "", url: "" }}
@@ -135,7 +134,7 @@ const Edit = ({ id  }) => {
                         subirImagenes={subirImagenes}
                       ></ImagenUpload>
                     )}
-                  </div> */}
+                  </div>
                 </div>
                 <form onSubmit={update} className="row">
                   <div className="mb-3 col-12 d-flex">
@@ -154,14 +153,14 @@ const Edit = ({ id  }) => {
                       className="form-control"
                     />
                   </div>
-              <div className="mb-3 col-12">
+                  <div className="mb-3 col-12">
                     <label className="form-label">Descripcion</label>
                     <Editor
                       descripcion={descripcion}
                       cargarDescripcion={handleDescripcionChange}
                     ></Editor>
                   </div>
-                      <div className="mb-3 col-12 d-flex">
+                  <div className="mb-3 col-12 d-flex">
                     <label className="form-label col-4">precio</label>
                     <input
                       value={precio}

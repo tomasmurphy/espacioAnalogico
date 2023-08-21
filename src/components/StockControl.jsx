@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { getDoc, updateDoc, doc } from "firebase/firestore";
-import Swal from "sweetalert2";
+
 
 import { dataBase } from "../firebaseConfig";
 
@@ -21,6 +21,7 @@ const StockControl = ({ id }) => {
     };
 
     getProductById(id);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id]);
 
   const handleUpdate = async (e) => {

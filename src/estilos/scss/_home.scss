@@ -31,12 +31,12 @@
 .home {
   background-image: url('../../../public/lau.jpg');
   background-repeat: no-repeat;
-  background-position: -400px 0px;
+  background-position: center center;
   background-size: cover;
   background-attachment: fixed;
   height: calc(100vh - 9rem);
   @include desktop{
-    background-position: 0px -100px;
+    background-position: center -100px;
   }
 
   .btnEspacio {

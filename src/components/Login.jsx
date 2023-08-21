@@ -3,7 +3,6 @@ import { GoogleAuthProvider, signInWithPopup, signOut } from "firebase/auth";
 import { auth, dataBase } from "../firebaseConfig";
 import { collection, getDocs } from "firebase/firestore";
 import Loader from './Loader';
-import logoMobile from '../img/logoVioleta.jpg';
 import { Link } from 'react-router-dom';
 
 const Login = ({ onLoginSuccess }) => {
@@ -67,7 +66,7 @@ const Login = ({ onLoginSuccess }) => {
 <>
 <div className='mt-5 d-flex justify-content-center'>
       <Link to="/">
-<img src={logoMobile} width="300" alt="logo optimarket OK" />
+<img src="/ean.jpg" width="300" alt="logo optimarket OK" />
 </Link>
 </div>
       <div className='d-flex justify-content-center'>

@@ -1,71 +1,68 @@
-
 .modal-dialog-cart {
-    width: 100vw;
-    height: fit-content;
-    margin-right: 0; 
+  width: 100vw;
+  height: fit-content;
+  margin-right: 0;
+  margin-top: 7rem;
+  margin-left: auto;
+  border-radius: 0;
+
+  @include desktop {
     margin-top: 7rem;
-    margin-left: auto;
-    border-radius: 0;
-
-    @include desktop{
-      margin-top: 7rem;
-      width: fit-content;
-  
-    }
-  }
-  .modal-backdrop-cart {
-    width: 100vw;
-    height: fit-content;
-  @include desktop{
     width: fit-content;
-  } 
   }
-  .modal-content-cart{
-    border: none;
-    border-radius: 0;
-    box-shadow: 4px 4px 8px #888888;
-    @include desktop{
+}
+.modal-backdrop-cart {
+  width: 100vw;
+  height: fit-content;
+  @include desktop {
+    width: fit-content;
+  }
+}
+.modal-content-cart {
+  border: none;
+  border-radius: 0;
+  box-shadow: 4px 4px 8px #888888;
+  @include desktop {
     border-bottom-left-radius: 1rem;
-    }
   }
-  .modal-content{
-    box-shadow: 4px 4px 8px #888888;
-  }
-  
-  .modal-dialog-index {
-    width: 100vw;
-    height: fit-content;
-    z-index: 11000;
-      margin-top: 10rem;
-    margin-left: auto;
-    border-radius: 0;
+}
+.modal-content {
+  box-shadow: 4px 4px 8px #888888;
+}
 
-    @include desktop{
-      margin-top: 10rem;
-      width: fit-content;
-  
-    }
-  }
-  .modal-backdrop-index {
-    z-index: 11000;
-    width: 100vw;
-    height: fit-content;
-  @include desktop{
+.modal-dialog-index {
+  width: 100vw;
+  height: fit-content;
+  z-index: 11000;
+  margin-top: 9rem;
+  margin-left: auto;
+  border-radius: 0;
+
+  @include desktop {
+    margin-top: 10rem;
     width: fit-content;
-  } 
   }
-  .modal-content-index{
-    z-index: 11000;
-    border: none;
-    font-weight: 500;
-    border-radius: 0;
-    box-shadow: 4px 4px 8px #888888;
-    @include desktop{
+}
+.modal-backdrop-index {
+  z-index: 11000;
+  width: 100vw;
+  height: fit-content;
+  @include desktop {
+    width: fit-content;
+  }
+}
+.modal-content-index {
+  z-index: 11000;
+  border: none;
+  font-weight: 500;
+  border-radius: 0;
+  background-color: rgba(255, 255, 255, .8);
+  box-shadow: 4px 4px 8px #888888;
+  @include desktop {
     border-radius: 1rem;
-    }
   }
-  .modal-content{
-    z-index: 11000;
-    box-shadow: 4px 4px 8px #888888;
-  }
-  
+}
+.modal-content {
+  z-index: 11000;
+  box-shadow: 4px 4px 8px #888888;
+}

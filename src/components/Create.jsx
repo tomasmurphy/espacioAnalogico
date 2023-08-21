@@ -8,13 +8,13 @@ import { Editor } from "./MostrarImagen";
 
 const Create = () => {
   const [precio, setprecio] = useState(0);
-  const [medidas, setMedidas] = useState({ancho:"", alto:"", patilla:""});
+  const [medidas, setMedidas] = useState({ ancho: "", alto: "", patilla: "" });
   const [categoria, setCategoria] = useState("");
   const [titulo, setTitulo] = useState("");
   const [descripcion, setDescripcion] = useState("");
   const [stock, setStock] = useState(1);
   const [imagenes, setImagenes] = useState([]);
-  const global = "Recetados"
+  const global = "Recetados";
 
   const productsCollection = collection(dataBase, "items");
 
@@ -26,7 +26,6 @@ const Create = () => {
     } else {
       setImagenes([...imagenes, img]);
     }
-    
   };
   const store = async (e) => {
     e.preventDefault();
@@ -37,33 +36,33 @@ const Create = () => {
       global: global,
       stock: stock,
       imagenes: imagenes,
-      medidas:medidas,
-      precio:precio,
-      estado: imagenes.length === 0 || stock === 0 ? "pausado" : "activo" 
+      medidas: medidas,
+      precio: precio,
+      estado: imagenes.length === 0 || stock === 0 ? "pausado" : "activo",
     });
     setCategoria("");
     setDescripcion("");
     setTitulo("");
     setprecio(0);
-    setMedidas("")
+    setMedidas("");
     setImagenes([]);
     setStock(1);
   };
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-  
+
   const cargarCategoria = (categoria) => {
-    setCategoria(categoria)
-    }
-    const handleCategoriaChange = (value) => {
-      setCategoria(value);
-      cargarCategoria(value);
-    };
-    const handleDescripcionChange = (value) => {
-      setDescripcion(value);
-    };
-  
+    setCategoria(categoria);
+  };
+  const handleCategoriaChange = (value) => {
+    setCategoria(value);
+    cargarCategoria(value);
+  };
+  const handleDescripcionChange = (value) => {
+    setDescripcion(value);
+  };
+
   return (
     <>
       <div className="boton" onClick={handleShow}>
@@ -86,25 +85,22 @@ const Create = () => {
               <div className="col">
                 <div className="mb-3 row cajaUpload">
                   <div className="col-4 text-center ">
-                    <ImagenUpload
-                      subirImagenes={subirImagenes}
-                    ></ImagenUpload>
+                    <ImagenUpload subirImagenes={subirImagenes}></ImagenUpload>
                   </div>
                   <div className="col-4 text-center">
-                    <ImagenUpload
-                      subirImagenes={subirImagenes}
-                    ></ImagenUpload>
+                    <ImagenUpload subirImagenes={subirImagenes}></ImagenUpload>
                   </div>
-                  {/* <div className="col-4 text-center">
-                    <ImagenUpload
-                      subirImagenes={subirImagenes}
-                    ></ImagenUpload>
-                  </div>{" "} */}
+                  <div className="col-4 text-center">
+                    <ImagenUpload subirImagenes={subirImagenes}></ImagenUpload>
+                  </div>{" "}
                 </div>
                 <form onSubmit={store} className="row">
                   <div className="d-flex mb-3 col-12">
                     <label className="form-label col-4">Categoria</label>
-                    <SelectCategoria categoria={categoria} cargarCategoria={handleCategoriaChange} />
+                    <SelectCategoria
+                      categoria={categoria}
+                      cargarCategoria={handleCategoriaChange}
+                    />
                   </div>
                   <div className="d-flex mb-3 col-12">
                     <label className="form-label col-4">Titulo</label>
@@ -122,10 +118,6 @@ const Create = () => {
                       cargarDescripcion={handleDescripcionChange}
                     ></Editor>
                   </div>
-                  {/* <div className="mb-3">
-                    <label className="form-label">Descripcion</label>
-                    <Editor descripcion={descripcion} cargarDescripcion={handleDescripcionChange}></Editor>
-                  </div> */}
                   <div className="d-flex mb-3 col-12">
                     <label className="form-label col-4">precio</label>
                     <input
@@ -160,7 +152,7 @@ const Create = () => {
                       </button>
                     </div>
                   </div>
-<div className="col-0 col-md-2"></div>
+                  <div className="col-0 col-md-2"></div>
                   <div className="mb-3 col-4 col-md-2 text-center">
                     <label className="form-label">Ancho</label>
                     <input
