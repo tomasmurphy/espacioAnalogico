@@ -1,5 +1,5 @@
 import Seo from "./Head";
-import Laboratorio from "./avtividades/Laboratorio";
+import Laboratorio from "./actividades/Laboratorio";
 import Cine from "./actividades/Cine";
 import Jornadas from "./actividades/Jornadas";
 import Tertulias from "./actividades/Tertulias";
