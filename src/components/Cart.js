@@ -18,6 +18,7 @@ const Cart = (props) => {
         size="md"
         style={{
           borderRadius: "0",
+          zIndex:"100000"
         }}
         dialogClassName="modal-dialog-cart"
         backdropClassName="modal-backdrop-cart"
@@ -28,7 +29,7 @@ const Cart = (props) => {
             {cart.length === 0 ? (
               <div>
                 <Link to={"/talleres"} onClick={props.handleModal}>
-                  <h1 className="text-end me-3">
+                  <h1 className="text-center text-md-end me-md-3">
                     Info e incripción a talleres
                     <img
                       src="../../icono4.png"
@@ -39,7 +40,7 @@ const Cart = (props) => {
                   </h1>
                 </Link>
                 <Link to={"/actividades"} onClick={props.handleModal}>
-                  <h1 className="text-end me-3">
+                  <h1 className="text-center text-md-end me-md-3">
                     Conocé nuestras actividades
                     <img
                       src="../../icono2.png"
@@ -50,7 +51,7 @@ const Cart = (props) => {
                   </h1>
                 </Link>
                 <Link to={"/categoria/todos"} onClick={props.handleModal}>
-                  <h1 className="text-end me-3 ">
+                  <h1 className="text-center text-md-end me-md-3 ">
                     Mirá nuestra tienda online
                     <img
                       src="../../icono3.png"
@@ -62,13 +63,13 @@ const Cart = (props) => {
                 </Link>
               </div>
             ) : (
-              <h1 className=""> seleccionados para consulta </h1>
+              <h1 className="negrita"> Seleccionados para consulta: </h1>
             )}
             <div>
               {cart.map((producto) => (
                 <div key={producto.id}>
                   <div>
-                    {producto.categoria}/{producto.titulo}
+                    {producto.titulo}/${producto.precio}
                     <button
                       className="btn"
                       onClick={() => clearProducto(producto.id)}
@@ -82,7 +83,7 @@ const Cart = (props) => {
             </div>
             <div className="botonera mt-4">
               {cart.length === 0 ? (
-                "O mandanos un mensaje"
+                <h1>O mandanos un mensaje</h1>
               ) : (
                 <Link
                   to="/categoria/todos"

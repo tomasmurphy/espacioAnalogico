@@ -31,7 +31,7 @@ const ItemDetailContent = (props) => {
             {isLoading
                 ? (<Loader></Loader>)
                 : (
-                    <div className='detalle pe-md-3 ps-md-3'>
+                    <div className='detalle  pe-md-3 ps-md-3'>
                         <ItemDetail onHandleCartModal={onHandleCartModal} itemDetail={itemDetail} />
                     </div>
                 )

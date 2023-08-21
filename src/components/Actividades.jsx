@@ -1,22 +1,36 @@
-import React, { useContext } from "react";
-import { useParams } from "react-router-dom";
-import { ItemList } from "./ItemList";
 import Seo from "./Head";
-import { CartContext } from "../context/CartContext";
+import Laboratorio from "./avtividades/Laboratorio";
+import Cine from "./actividades/Cine";
+import Jornadas from "./actividades/Jornadas";
+import Tertulias from "./actividades/Tertulias";
 
 const Actividades = () => {
-  window.scrollTo(0, 0);
+  const handleScrollToSection = (sectionId, isVisible) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      const offset = 143;
+      const offsetTop = section.offsetTop - offset;
 
+      window.scrollTo({
+        top: offsetTop,
+        behavior: "smooth",
+      });
+    }
+  };
   return (
     <>
       <Seo
         title={"Actividades"}
-        description={"Avtividades del espacio"}
+        description={"Actividades del espacio"}
         pathSlug={window.location.href}
       />
-      <div className="item row">
-        <h1>EN CONSTRUCCION</h1>
-       </div>
+
+      <div>
+        <Laboratorio onToggleContent={handleScrollToSection} />
+        <Cine onToggleContent={handleScrollToSection} />
+        <Jornadas onToggleContent={handleScrollToSection} />
+        <Tertulias onToggleContent={handleScrollToSection} />
+      </div>
     </>
   );
 };

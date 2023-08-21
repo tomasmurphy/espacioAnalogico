@@ -29,19 +29,21 @@
 }
  
 .home {
-  background-image: url('../../../public/blanco.png');
+  background-image: url('../../../public/lau.jpg');
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: -400px 0px;
   background-size: cover;
-  background-attachment: scroll;
+  background-attachment: fixed;
   height: calc(100vh - 9rem);
+  @include desktop{
+    background-position: 0px -100px;
+  }
 
   .btnEspacio {
     position: absolute;
-    top: 15rem;
-    left: 5rem;
-    margin: 2rem;
-    margin-right: 1rem;
+    top: 70%;
+    left: 50%;
+    transform: translateX(-50%);
     background-color: rgba(255, 255, 255, .6);
     color: negro;
     padding-right: 1rem;
@@ -59,10 +61,11 @@
     box-shadow: 4px 4px 8px #888888; 
   };
     @include desktop {
-      // padding-top: 1rem;
-      // padding-bottom: 1rem;
-      // // top: 30%;
-      // // left: 3rem;
+    top: 11rem;
+    left: 13%;
+    margin: 2rem;
+    margin-right: 1rem;
+    
     }
   }
 

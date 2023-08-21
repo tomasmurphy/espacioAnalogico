@@ -31,7 +31,7 @@ function NavMenu() {
         </NavLink>
         <Dropdown className="d-inline">
           <Dropdown.Toggle as="div" className="" id="dropdown">
-            <Link to="/categoria/todos" className={activo} >
+            <Link to="#" className={activo} >
               Tienda
             </Link>
           </Dropdown.Toggle>
