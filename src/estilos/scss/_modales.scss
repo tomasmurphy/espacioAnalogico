@@ -66,3 +66,41 @@
   z-index: 11000;
   box-shadow: 4px 4px 8px #888888;
 }
+
+
+.modal-dialog-form {
+  width: 100vw;
+  height: fit-content;
+  z-index: 11000;
+  margin-top: 7rem;
+  margin-left: auto;
+  border-radius: 0;
+  color: white!important;
+
+  @include desktop {
+    margin-top: 7rem;
+    width: fit-content;
+  }
+}
+.modal-backdrop-form {
+  z-index: 11000;
+  width: 100vw;
+  height: fit-content;
+  color: white!important;
+  @include desktop {
+    width: fit-content;
+  }
+}
+.modal-content-form {
+  z-index: 11000;
+  border: none;
+  font-weight: 500;
+  border-radius: 0;
+  
+  background-color: rgba(255, 255, 255, 1);
+  box-shadow: 4px 4px 8px #888888;
+  @include desktop {
+    border-radius: 1rem;
+  }
+  
+}

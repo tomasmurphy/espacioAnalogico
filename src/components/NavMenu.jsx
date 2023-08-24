@@ -12,7 +12,7 @@ function NavMenu() {
     
     useEffect(() => {
       getItems().then((categorias) => {
-        const filtro = categorias.filter(item => item.hasOwnProperty("categoria"));
+        const filtro = categorias.filter(item => item.hasOwnProperty("categoria")&& item.categoria !== "talleres");
         setCategories(filtro);
       }).catch((error) => {
         console.log(error);

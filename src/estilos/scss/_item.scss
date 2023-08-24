@@ -40,8 +40,17 @@
   }
   h4 {
     font-size: 0.8rem;
-    font-weight: normal;
+   
     text-transform: uppercase;
+    
+      display: flex;
+      align-items: center; /* Centrar verticalmente */
+      justify-content: center;
+      min-height: 2rem;
+      font-weight: 500 !important;
+      padding-left: 0.5rem;
+      padding-right: 0.5rem;
+
   }
   p {
     font-size: 1rem;
@@ -51,7 +60,7 @@
     display: flex;
     justify-content: flex-end;
     .seisSin{
-      background-color: $detalle8;
+      
       border-top-left-radius: 1rem;
       border-top-right-radius: 1rem;
       color: white;
@@ -59,14 +68,16 @@
       padding-right: 1rem
     }
     .ahorro{
-      background-color: rgba(255, 0, 0,.8);
+      background-color: black;
       width: fit-content;
       border-top-left-radius: 1rem;
       border-top-right-radius: 1rem;
-      color: white;
+      color: whitesmoke;
       padding-left: 1rem;
       padding-right: 1rem;
       align-self: flex-end;
+      font-size: .9rem;
+     
     }
   }
   
@@ -127,4 +138,44 @@
 }
 .itemDetail{
   max-width: 1000px;
+}
+.tienda{
+  .cajaDeCajas{
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.5);
+    transition-duration: 0.4s;
+    &:hover {
+      // opacity: 0.7;
+      box-shadow: 0 6px 8px rgba(0, 0, 0, 0.5), 0 4px 6px rgba(0, 0, 0, 0.08);
+    }
+  }
+  .caja {
+    
+    position: relative;
+    width: 100%; /* Or set a specific width */
+    padding-top: 100%;
+    overflow: hidden;
+   
+    
+    .prueba{
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center center;
+    }
+  
+    .img-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+     
+    }
+    
+  
+    
+  }
 }

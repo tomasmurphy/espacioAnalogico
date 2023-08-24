@@ -12,7 +12,7 @@ import Cart from './Cart';
 import { CartProvider } from '../context/CartContext'; 
 import Talleres from './Talleres';
 import Actividades from './Actividades';
-
+import TallerDetailContent from './talleres/TallerDetailContent';
 const Main = () => {
     const location = useLocation().pathname
     const [showCart, setShowCart] = useState(false);
@@ -34,6 +34,7 @@ const Main = () => {
                             <Route  path='/categoria/:nombreCategoria' element={<ItemListContainer />} />
                             <Route path='/detalle/:idProducto' element={<ItemDetailContent handleCartModal={handleCartModal} />} />
                             <Route path='/talleres' element={<Talleres />} />
+                            <Route path='/talleres/:idProducto' element={<TallerDetailContent />} />
                             <Route path='/actividades' element={<Actividades />} />
                             <Route path='/admin' element={<Show />} />
                         </Routes>

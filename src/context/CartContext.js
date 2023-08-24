@@ -1,6 +1,7 @@
 import React, { createContext, useState, useEffect } from "react";
 import { collection, getDocs, where, query, orderBy } from "firebase/firestore";
 import { dataBase } from "../firebaseConfig";
+import Loader from "../components/Loader";
 
 export const CartContext = createContext();
 
@@ -8,6 +9,7 @@ export const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
   const [showModal, setShowModal] = useState(false);
   const [items, setItems] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   const addToCart = (item) => {
     if (isInCart(item.id)) {
@@ -87,10 +89,12 @@ export const CartProvider = ({ children }) => {
         return { id: doc.id, ...doc.data() };
       });
       setItems(productos);
+      setIsLoading(false);
     };
-
+  
     loadProducts();
   }, []);
+  
 
   return (
     <CartContext.Provider
@@ -103,10 +107,20 @@ export const CartProvider = ({ children }) => {
         totalPrecio,
         cantidadSeleccionada,
         handleModal,
-        items,
+        items
       }}
     >
-      {children}
+      {isLoading ? (
+        <div className="loader-container">
+          <div className="loader">
+            
+            <Loader />
+          </div>
+        </div>
+      ) : (
+        children
+      )}
     </CartContext.Provider>
   );
 };
+

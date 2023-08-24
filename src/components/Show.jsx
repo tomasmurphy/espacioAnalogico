@@ -121,13 +121,11 @@ const Show = () => {
     const productosFiltrados = productos.filter((producto) => {
       const titulo = producto.titulo.toLowerCase();
       const descripcion = producto.descripcion.toLowerCase();
-      const precio = producto.precio;
       const categoria = producto.categoria.toLowerCase();
       const searchTermLower = searchTerm.toLowerCase();
       return (
         titulo.includes(searchTermLower) ||
         descripcion.includes(searchTermLower) ||
-        precio.includes(searchTermLower) ||
         categoria.includes(searchTermLower)
       );
     });
@@ -219,14 +217,14 @@ const Show = () => {
                 <div className="d-none d-md-flex col-md-2 mx-0 px0">
                   Categoría
                 </div>
-                <div className="col-6 col-md-2 mx-0 px0">Título</div>
+                <div className="col-6 col-md-6 mx-0 px0">Título</div>
                 <div className="d-none d-md-flex col-md-2 mx-0 px0">
                   precio
                 </div>
-                <div className="d-none d-md-flex col-md-3 mx-0 px0">
+                {/* <div className="d-none d-md-flex col-md-3 mx-0 px0">
                   Descripción
                 </div>
-                <div className="col-3 col-md-1 mx-0 px0">Stock</div>
+                <div className="col-3 col-md-1 mx-0 px0">Stock</div> */}
                 <div className="col-3 col-md-2 mx-0 px0">Editar/Borrar</div>
               </div>
               {filteredProducts.map((product) => (
@@ -239,20 +237,20 @@ const Show = () => {
                   <div className="d-none d-md-flex col-md-2 mx-0 px0">
                     {product.categoria}
                   </div>
-                  <div className="col-6 col-md-2 mx-0 px0">
+                  <div className="col-6 col-md-6 mx-0 px0">
                     {product.titulo}
                   </div>
                   <div className="d-none d-md-flex col-2  mx-0 px0">
                     {product.precio}
                   </div>
-                  <div
+                  {/* <div
                     className="d-none d-md-flex col-3 descripcion"
                     dangerouslySetInnerHTML={{ __html: product.descripcion }}
                   />
 
                   <div className="col-3 col-md-1  mx-0 px0">
                     {product.stock}
-                  </div>
+                  </div> */}
                   <div className="d-flex col-3 col-md-2 mx-0 px0">
                     <Edit id={product.id}></Edit>
                     <div>

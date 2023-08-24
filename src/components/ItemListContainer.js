@@ -12,7 +12,7 @@ const ItemListContainer = () => {
 
     const productosCategoria = nombreCategoria !== "todos" ?
         items.filter((p) => p.categoria === nombreCategoria) :
-        items;
+        items.filter((p) => p.categoria !== "talleres");
 
     return (
         <>
