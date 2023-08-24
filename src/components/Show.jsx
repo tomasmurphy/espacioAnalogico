@@ -214,18 +214,18 @@ const Show = () => {
                 style={{ fontWeight: "bold" }}
                 key="titles"
               >
-                <div className="d-none d-md-flex col-md-2 mx-0 px0">
+                <div className="d-none d-md-flex col-md-3 mx-0 px0">
                   Categoría
                 </div>
-                <div className="col-6 col-md-6 mx-0 px0">Título</div>
-                <div className="d-none d-md-flex col-md-2 mx-0 px0">
+                <div className="col-8 col-md-7 mx-0 px0">Título</div>
+                <div className="d-none d-md-flex col-md-1 mx-0 px0">
                   precio
                 </div>
                 {/* <div className="d-none d-md-flex col-md-3 mx-0 px0">
                   Descripción
                 </div>
                 <div className="col-3 col-md-1 mx-0 px0">Stock</div> */}
-                <div className="col-3 col-md-2 mx-0 px0">Editar/Borrar</div>
+                <div className="col-3 col-md-1 mx-0 px0">Edit/Borrar</div>
               </div>
               {filteredProducts.map((product) => (
                 <div
@@ -234,24 +234,17 @@ const Show = () => {
                   } ${product.imagenes.length === 0 ? "noStock" : ""}`}
                   key={product.id}
                 >
-                  <div className="d-none d-md-flex col-md-2 mx-0 px0">
+                  <div className="d-none d-md-flex col-md-3 mx-0 px0">
                     {product.categoria}
                   </div>
-                  <div className="col-6 col-md-6 mx-0 px0">
+                  <div className="col-9 col-md-7 mx-0 px0">
                     {product.titulo}
                   </div>
-                  <div className="d-none d-md-flex col-2  mx-0 px0">
+                  <div className="d-none d-md-flex col-1  mx-0 px0">
                     {product.precio}
                   </div>
-                  {/* <div
-                    className="d-none d-md-flex col-3 descripcion"
-                    dangerouslySetInnerHTML={{ __html: product.descripcion }}
-                  />
-
-                  <div className="col-3 col-md-1  mx-0 px0">
-                    {product.stock}
-                  </div> */}
-                  <div className="d-flex col-3 col-md-2 mx-0 px0">
+              
+                  <div className="d-flex col-3 col-md-1 mx-0 px0">
                     <Edit id={product.id}></Edit>
                     <div>
                       <i

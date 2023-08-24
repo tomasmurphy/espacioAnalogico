@@ -8,7 +8,6 @@ import { Editor } from "./MostrarImagen";
 
 const Create = () => {
   const [precio, setprecio] = useState(0);
-  const [medidas, setMedidas] = useState({ ancho: "", alto: "", patilla: "" });
   const [categoria, setCategoria] = useState("");
   const [titulo, setTitulo] = useState("");
   const [descripcion, setDescripcion] = useState("");
@@ -36,7 +35,6 @@ const Create = () => {
       global: global,
       stock: stock,
       imagenes: imagenes,
-      medidas: medidas,
       precio: precio,
       estado: imagenes.length === 0 || stock === 0 ? "pausado" : "activo",
     });
@@ -44,7 +42,6 @@ const Create = () => {
     setDescripcion("");
     setTitulo("");
     setprecio(0);
-    setMedidas("");
     setImagenes([]);
     setStock(1);
   };
@@ -118,8 +115,8 @@ const Create = () => {
                       cargarDescripcion={handleDescripcionChange}
                     ></Editor>
                   </div>
-                  <div className="d-flex mb-3 col-12">
-                    <label className="form-label col-4">precio</label>
+                  <div className="mb-3 col-4 me-2 me-md-5">
+                    <label className="form-label col-4 ">Precio</label>
                     <input
                       value={precio}
                       onChange={(e) => setprecio(e.target.value)}
@@ -127,7 +124,7 @@ const Create = () => {
                       className="form-control"
                     />
                   </div>
-                  <div className="mb-3 col-12 col-md-4 text-center">
+                  <div className="mb-3 col-6 text-center">
                     <label className="form-label">Stock</label>
                     <div className="input-group">
                       <button
@@ -152,41 +149,7 @@ const Create = () => {
                       </button>
                     </div>
                   </div>
-                  <div className="col-0 col-md-2"></div>
-                  <div className="mb-3 col-4 col-md-2 text-center">
-                    <label className="form-label">Ancho</label>
-                    <input
-                      value={medidas.ancho}
-                      onChange={(e) =>
-                        setMedidas({ ...medidas, ancho: e.target.value })
-                      }
-                      type="number"
-                      className="form-control text-center"
-                    />
-                  </div>
-                  <div className="mb-3 col-4 col-md-2 text-center">
-                    <label className="form-label">Alto</label>
-                    <input
-                      value={medidas.alto}
-                      onChange={(e) =>
-                        setMedidas({ ...medidas, alto: e.target.value })
-                      }
-                      type="number"
-                      className="form-control text-center"
-                    />
-                  </div>
-                  <div className="mb-3 col-4 col-md-2 text-center">
-                    <label className="form-label">Patilla</label>
-                    <input
-                      value={medidas.patilla}
-                      onChange={(e) =>
-                        setMedidas({ ...medidas, patilla: e.target.value })
-                      }
-                      type="number"
-                      className="form-control text-center"
-                    />
-                  </div>
-
+                  
                   <button
                     type="submit"
                     onClick={handleClose}
