@@ -16,7 +16,7 @@ import { storage } from "../firebaseConfig";
 import { ref, deleteObject } from "firebase/storage";
 import Login from "./Login";
 import Categorias from "./Categorias";
-import Inicio from "./Inicio";
+// import Inicio from "./Inicio";
 import Test from "./ExportExcel";
 
 const Show = () => {
@@ -191,7 +191,7 @@ const Show = () => {
               <div className="d-flex flex-column gap-1 justify-content-end flex-md-row text-center mb-2">
                 <Create></Create>
                 <Categorias></Categorias>
-                <Inicio></Inicio>
+                {/* <Inicio></Inicio> */}
                 <Test></Test>
               </div>
               <div className="row gap-1 mb-2">

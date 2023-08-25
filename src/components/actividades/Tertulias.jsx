@@ -64,7 +64,7 @@ const Tertulias = ({ onToggleContent }) => {
         <img
           src="/Tertulias/tertulias (1).jpg"
           alt="Tertulias"
-          className="img-fluid col-12 col-md-3 m-0 p-0"
+          className="img-fluid d-none d-md-block col-md-3 m-0 p-0"
         />
         <img
           src="/Tertulias/tertulias (2).jpg"

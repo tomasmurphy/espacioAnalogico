@@ -17,4 +17,17 @@
             outline: none;
         }
     }
+    textarea{
+        
+            margin: 1rem;
+            border-radius: 1rem;
+            padding-left: 1rem;
+            width: 100%;
+            border: solid 1px rgba(128, 128, 128, .5);
+            &:focus{
+                border: 2px solid $detalle6;
+                outline: none;
+            }
+        
+    }
 }

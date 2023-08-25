@@ -28,6 +28,7 @@ export const TallerDetail = ({ itemDetail, onHandleCartModal }) => {
       },
     ],
   };
+ 
 
   return (
     <>
@@ -40,9 +41,9 @@ export const TallerDetail = ({ itemDetail, onHandleCartModal }) => {
 
       <div className="row">
       <div className="col-12 text-center">
-<h1>{itemDetail.titulo}</h1>
+<h1 className="mb-0">{itemDetail.titulo}</h1>
             
-            <p className="text-end arancel letraGris me-2">
+            <p className="d-none d-md-block text-end arancel letraGris me-2">
             {itemDetail.precio === 0
               ? "consultar próximo comienzo "
               : <>arancel: <span className="negrita">
@@ -68,11 +69,19 @@ export const TallerDetail = ({ itemDetail, onHandleCartModal }) => {
               </div>
             ))}
           </Carousel>
+          <p className="text-end arancel letraGris me-2">
+            {itemDetail.precio === 0
+              ? "consultar próximo comienzo "
+              : <>arancel: <span className="negrita">
+              ${itemDetail.precio.toLocaleString()}{" "}
+            </span></> }
+            
+            </p>
           </div>
         </div>
 
 
-        <div className="card pe-3 ps-3  mt-3 col-12">
+        <div className="card pe-3 ps-3   col-12">
           
           <div>
           <div className="d-none d-md-block imgDesktop">
@@ -87,16 +96,18 @@ export const TallerDetail = ({ itemDetail, onHandleCartModal }) => {
               </div>
             ))}
           </Carousel>
+         
           </div>
             
            
-          
+     
           <div
               className="mt-3"
               dangerouslySetInnerHTML={{ __html: itemDetail.descripcion }}
             />
         
         </div>
+      
         <FormContactoContainer taller={itemDetail.titulo}/>
         </div>
       </div>

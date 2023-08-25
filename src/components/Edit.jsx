@@ -161,7 +161,7 @@ const Edit = ({ id }) => {
                     <label className="form-label col-4">Precio</label>
                     <input
                       value={precio}
-                      onChange={(e) => setprecio(e.target.value)}
+                      onChange={(e) => setprecio(parseInt(e.target.value))}
                       type="number"
                       className="form-control"
                     />

@@ -7,6 +7,9 @@ import Modal from "react-bootstrap/Modal";
 
 const Cart = (props) => {
   const { cart, clearCart, clearProducto } = useContext(CartContext);
+  const celu = window.innerWidth < 990 ? "api" : "web";
+  const whatsapp = "Hola *Espacio Analógico!* 📷"
+  const linkCompra = `https://${celu}.whatsapp.com/send?phone=5493415155579&text=${whatsapp}`;
 
   return (
     <>
@@ -83,21 +86,26 @@ const Cart = (props) => {
             </div>
             <div className="botonera mt-4">
               {cart.length === 0 ? (
-                <h1>O mandanos un mensaje</h1>
-              ) : (
-                <Link
-                  to="/categoria/todos"
-                  onClick={props.handleModal}
-                  className="boton"
+                <div className="mb-3">
+                <a
+                  href={linkCompra}
+                  className="boton btnWhat"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
-                  Agregar mas productos
-                </Link>
-              )}
-              <Form
+                  O mandanos un mensaje<i className="bi bi-whatsapp"></i>
+                </a>
+              </div>
+              ) : (
+                <>
+                <Form
                 cart={cart}
                 handleModal={props.handleModal}
                 clearCart={clearCart}
-              ></Form>
+              ></Form></>
+                
+              )}
+              
             </div>
           </div>
         </Modal.Body>

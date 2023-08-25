@@ -20,9 +20,9 @@ export const Item = ({ id = "", titulo = "", imagenes = "", precio = "" }) => {
           </div>
           <h4 className="text-center negrita mt-2">{titulo}</h4>
           <p className="text-center negrita pb-3">
-            <span className="negrita me-2">${precio.toLocaleString()} </span>
+            <span className="negrita me-2">${precio.toLocaleString("es-Es")} </span>
           </p>
-       
+        
 
 
 </div>
