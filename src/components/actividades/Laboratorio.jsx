@@ -38,7 +38,7 @@ const Laboratorio = ({ onToggleContent }) => {
         </div>
         <div onClick={toggleContent} className={` ${isContentVisible ? "d-none" : "d-flex wrap "}`}>
           <div  className="btnEspacio">
-            LABORATORIO ABIERTO por hora <br />
+            LABORATORIO ABIERTO por hora &lt;<br />
             Es una instancia de ingreso al laboratorio para todas aquellas
             personas que sostienen la práctica de revelado de negativos, o de toma
             fotográfica analógica pero que no han experimentado aún la copia al

@@ -50,7 +50,7 @@ const Tertulias = ({ onToggleContent }) => {
         >
           <div   className="btnEspacio">
         
-          TERTULIAS ANALÓGICAS <br />
+          TERTULIAS ANALÓGICAS &lt;<br />
           Al menos en dos momentos del año realizamos estos encuentros en los
           que se desarrollan diferentes actividades tales como: presentar los
           materiales editoriales nuevos que hayamos realizado, organizar

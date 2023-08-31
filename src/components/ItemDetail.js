@@ -75,7 +75,7 @@ export const ItemDetail = ({ itemDetail, onHandleCartModal }) => {
            
           </div>
           <div
-              className="mt-3"
+              className="mt-3 htmlEn"
               dangerouslySetInnerHTML={{ __html: itemDetail.descripcion }}
             />
           <div className="mt-3">

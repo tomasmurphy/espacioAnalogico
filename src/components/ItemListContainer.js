@@ -7,7 +7,7 @@ import { CartContext } from '../context/CartContext';
 const ItemListContainer = () => {
     window.scrollTo(0, 0)
     const { nombreCategoria } = useParams()
-    const cartContext = useContext(CartContext);
+    const cartContext = useContext(CartContext); 
     const {items} = cartContext
 
     const productosCategoria = nombreCategoria !== "todos" ?

@@ -8,7 +8,7 @@ const Home = () => {
   return (
     <>
       <Seo
-        title={"Espacion Analógico"}
+        title={"Espacio Analógico"}
         description={
           "laboratorio-taller de imágenes e ideas en torno a la fotografía analógica y experimental"
         }

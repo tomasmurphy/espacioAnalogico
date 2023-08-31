@@ -42,7 +42,7 @@ const Cine = ({ onToggleContent }) => {
           className={` ${isContentVisible ? "d-none" : "d-flex wrap "}`}
         >
           <div className="btnEspacio">
-            CINE DEL ESPACIO <br />
+            CINE DEL ESPACIO &lt; <br />
             En el Cine del Espacio proyectamos películas como forma de sostener
             los vínculos con aquellas personas que no se encuentran actualmente
             tomando talleres pero que son parte del laboratorio por venir a

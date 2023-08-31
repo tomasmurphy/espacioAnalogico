@@ -102,7 +102,7 @@ export const TallerDetail = ({ itemDetail, onHandleCartModal }) => {
            
      
           <div
-              className="mt-3"
+              className="mt-3 htmlEn"
               dangerouslySetInnerHTML={{ __html: itemDetail.descripcion }}
             />
         

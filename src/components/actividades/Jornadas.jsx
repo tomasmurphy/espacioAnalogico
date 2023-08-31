@@ -39,7 +39,7 @@ const Jornadas = ({ onToggleContent }) => {
           className={` ${isContentVisible ? "d-none" : "d-flex wrap "}`}
         >
           <div className="btnEspacio">
-            JORNADAS AL AIRE LIBRE <br />
+            JORNADAS AL AIRE LIBRE &lt;<br />
             Realizamos salidas a diferentes puntos de la ciudad como parques, la
             costa del río o a las islas del río Paraná. Es un momento de puesta
             en práctica de diferentes técnicas para quienes ya hayan tomado
